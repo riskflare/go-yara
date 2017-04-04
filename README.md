@@ -7,9 +7,7 @@ Go bindings for [YARA](http://plusvic.github.io/yara/), staying as
 close as sensible to the library's C-API while taking inspiration from
 the `yara-python` implementation.
 
-YARA 3.4.0 or higher is required for full functionality. If you need
-to build with YARA 3.3.0, please build with the `yara3.3` build tag.
-(The `compat-yara-3.3` branch has been removed.)
+YARA 3.5.0 or higher is required.
 
 ## Installation
 
@@ -19,21 +17,14 @@ On a Unix system with libyara properly installed, this should work,
 provided that `GOPATH` is set:
 
 ```
-go get github.com/hillu/go-yara
-go install github.com/hillu/go-yara
+go get github.com/riskflare/go-yara
+go install github.com/riskflare/go-yara
 ```
 
 Depending on what location libyara and its headers have been
 installed, proper `CFLAGS` and `LDFLAGS` may have to be added to
 `cgo.go` or be specified via environment variables (`CGO_CFLAGS` and
 `CGO_LDFLAGS`).
-
-Linker errors buried in the CGO output such as
-
-    undefined reference to `yr_compiler_add_file'
-
-probably mean that the linker is looking at an old version of the YARA
-library.
 
 ### Cross-building for Windows
 
