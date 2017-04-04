@@ -67,4 +67,14 @@ int _yr_rules_scan_fd(
 {
   return yr_rules_scan_fd(rules, (YR_FILE_DESCRIPTOR)fd, flags, callback, user_data, timeout);
 }
+
+int _yr_compiler_add_fd(
+    YR_COMPILER *compiler,
+    int rules_fd,
+    const char *namespace,
+    const char *file_name)
+{
+  return yr_compiler_add_fd(compiler, (YR_FILE_DESCRIPTOR)rules_fd, namespace, file_name);
+}
+
 #endif
